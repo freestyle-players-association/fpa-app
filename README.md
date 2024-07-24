@@ -1,5 +1,12 @@
 # Local Development
 
+## Install Packages
+
+Install packages with:
+```bash
+npm install
+```
+
 ## Start Backend
 
 You need to have docker daemon running
