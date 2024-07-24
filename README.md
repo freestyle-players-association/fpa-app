@@ -6,7 +6,7 @@ You need to have docker daemon running
 
 1. Run the start command
     ```bash
-    npx supabse start
+    npx supabase start
     ```
 2. Create a new file called `.env.local`, put in the fields of the file `.example.env.local` and fill the content with
    the output from the command before
