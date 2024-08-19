@@ -1,0 +1,1 @@
+ALTER TABLE tournaments ALTER COLUMN description SET NOT NULL;
