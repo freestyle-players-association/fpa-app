@@ -1,11 +1,11 @@
 .container {
-    width: 42px;
-    height: 42px;
-    border-radius: 50px;
-    overflow: hidden;
+  width: 42px;
+  height: 42px;
+  border-radius: 50px;
+  overflow: hidden;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: gray;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: gray;
 }
