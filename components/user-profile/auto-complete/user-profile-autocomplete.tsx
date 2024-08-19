@@ -6,7 +6,7 @@ import UserProfileDisplay from "@/components/user-profile/details/user-profile-d
 import { useDebouncedCallback } from "use-debounce";
 
 type UserProfileAutocompleteProps = {
-  onSelectUser: (userProfile: Tables<"userprofile">) => void;
+  onSelectUser: (userProfile: Tables<"userprofiles">) => void;
 };
 
 export default function UserProfileAutocomplete(
@@ -14,7 +14,7 @@ export default function UserProfileAutocomplete(
 ) {
   const [username, setUsername] = useState("");
   const [foundUserProfiles, setFoundUserProfiles] = useState<
-    Tables<"userprofile">[]
+    Tables<"userprofiles">[]
   >([]);
 
   // somehow React.ChangeEventHandler<HTMLInputElement> is bugged or I am stupid
@@ -32,7 +32,7 @@ export default function UserProfileAutocomplete(
     300,
   );
 
-  const handleSelectUser = (userProfile: Tables<"userprofile">) => {
+  const handleSelectUser = (userProfile: Tables<"userprofiles">) => {
     props.onSelectUser(userProfile);
     setUsername("");
   };

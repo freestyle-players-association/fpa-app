@@ -6,7 +6,7 @@ import FormSubmitButton from "@/components/common/form-submit-button/form-submit
 import { Tables } from "@/utils/supabase/database.types";
 
 type UpdateUserProfileFormProps = {
-  initialValues: Partial<Omit<Tables<"userprofile">, "avatar_url" | "id">>;
+  initialValues: Partial<Omit<Tables<"userprofiles">, "avatar_url" | "id">>;
 };
 
 export default function UpdateUserProfileForm({

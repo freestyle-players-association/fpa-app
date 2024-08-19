@@ -16,7 +16,7 @@ export default function CreateTournamentOrganizerInvitationForm({
   tournamentId,
 }: CreateTournamentOrganizerInvitationFormProps) {
   const [selectedUserProfile, setSelectedUserProfile] =
-    useState<Tables<"userprofile"> | null>(null);
+    useState<Tables<"userprofiles"> | null>(null);
 
   const resetSelectedUserProfile = () => setSelectedUserProfile(null);
 
