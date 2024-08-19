@@ -1,3 +1,6 @@
 /utils/supabase/database.types.ts
 
+*.yaml
+*.yml
+
 README.md
