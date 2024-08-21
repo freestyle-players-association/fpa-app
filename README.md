@@ -63,3 +63,15 @@ Password: `123456`.
   npx supabase db dump --local --data-only --exclude storage.buckets --file supabase/seed.sql
 # updates the supabase/seed.sql file with the data of the current local database
 ```
+
+
+### Release-flow
+
+1. Create a new branch from `main`.
+2. Make changes.
+3. Create pull request.
+4. All new migrations are applied to the preview backend environment.
+5. Make all checks pass.
+6. Let the pull request be approved by a collaborator
+7. Merge pull request
+8. All migrations are applied to the production backend environment after merge.
