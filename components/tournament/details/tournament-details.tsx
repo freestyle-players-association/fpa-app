@@ -15,7 +15,9 @@ export default async function TournamentDetails({
       <div style={{ border: "solid", padding: "1rem" }}>
         <h2>{tournament.name}</h2>
         <p>{tournament.description}</p>
-        <p>{start_date} - {end_date}</p>
+        <p>
+          {start_date} - {end_date}
+        </p>
       </div>
     </div>
   );

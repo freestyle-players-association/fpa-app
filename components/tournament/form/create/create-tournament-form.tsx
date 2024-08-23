@@ -9,15 +9,16 @@ export default function CreateTournamentForm() {
   const [state, dispatch] = useFormState(createTournament, {});
 
   const errors = state.validationErrors;
-  const displayErrors = errors && Object.keys(errors).length > 0 ? (
-    <div className="text-red-500">
-      {Object.entries(errors).map(([field, messages]) => (
-        <div key={field}>
-          {field}: {messages.join(", ")}
-        </div>
-      ))}
-    </div>
-  ) : null;
+  const displayErrors =
+    errors && Object.keys(errors).length > 0 ? (
+      <div className="text-red-500">
+        {Object.entries(errors).map(([field, messages]) => (
+          <div key={field}>
+            {field}: {messages.join(", ")}
+          </div>
+        ))}
+      </div>
+    ) : null;
 
   return (
     <form action={dispatch} className="flex flex-col gap-2">
@@ -37,13 +38,15 @@ export default function CreateTournamentForm() {
         required
         type="date"
         placeholder="start date"
-        className={styles.textInput}/>
+        className={styles.textInput}
+      />
       <input
         name="end_date"
         required
         type="date"
         placeholder="end date"
-        className={styles.textInput}/>
+        className={styles.textInput}
+      />
       <FormSubmitButton>Create Tournament</FormSubmitButton>
       {displayErrors}
     </form>

@@ -47,7 +47,7 @@ export async function createTournament(
       name: validatedFields.data.name,
       description: validatedFields.data.description,
       start_date: validatedFields.data.start_date,
-      end_date: validatedFields.data.end_date
+      end_date: validatedFields.data.end_date,
     })
     .select()
     .maybeSingle()
@@ -57,7 +57,7 @@ export async function createTournament(
     .from("tournament_organizers")
     .insert({
       tournament_id: data!.id,
-      userprofile_id: user.id
+      userprofile_id: user.id,
     })
     .throwOnError();
 
