@@ -12,7 +12,7 @@ export async function deleteTournamentOrganizerAction(
 
   const supabase = createClient();
   await supabase
-    .from("tournamentorganizers")
+    .from("tournament_organizers")
     .delete()
     .match({ tournament_id: tournamentId, userprofile_id: userId })
     .throwOnError();

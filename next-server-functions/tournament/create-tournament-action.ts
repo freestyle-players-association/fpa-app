@@ -9,6 +9,8 @@ import { getUser } from "@/next-server-functions/user/auth-data";
 export type CreateTournamentValidationErrors = {
   name?: string[];
   description?: string[];
+  start_date?: string[];
+  end_date?: string[];
 };
 
 type CreateTournamentState = {
@@ -22,6 +24,8 @@ export async function createTournament(
   const validatedFields = TournamentSchema.safeParse({
     name: formData.get("name"),
     description: formData.get("description"),
+    start_date: formData.get("start_date"),
+    end_date: formData.get("end_date"),
   });
 
   if (!validatedFields.success) {
@@ -42,17 +46,18 @@ export async function createTournament(
     .insert({
       name: validatedFields.data.name,
       description: validatedFields.data.description,
+      start_date: validatedFields.data.start_date,
+      end_date: validatedFields.data.end_date
     })
     .select()
     .maybeSingle()
     .throwOnError();
 
   await supabase
-    .from("tournamentorganizers")
+    .from("tournament_organizers")
     .insert({
       tournament_id: data!.id,
-      userprofile_id: user.id,
-      state: "accepted",
+      userprofile_id: user.id
     })
     .throwOnError();
 

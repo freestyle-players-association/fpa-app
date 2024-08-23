@@ -13,7 +13,7 @@ export async function listTournamentOrganizers<SC>(
   tournamentId: string,
 ) {
   return supabase
-    .from("tournamentorganizers")
+    .from("tournament_organizers")
     .select(
       `
       tournament_id,
