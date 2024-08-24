@@ -1,17 +1,23 @@
 import { z } from "zod";
 
-const isFutureDate = (date: Date) => date > new Date();
+const futureDate = z
+  .string()
+  .datetime()
+  .refine(
+    (date) => {
+      return new Date(date) > new Date();
+    },
+    {
+      message: "Date must be in the future",
+    },
+  );
 
 export const TournamentSchema = z
   .object({
-    name: z.string().min(3, "Too short"),
-    description: z.string().optional(),
-    start_date: z.coerce.date().refine(isFutureDate, {
-      message: "Start date must be in the future",
-    }),
-    end_date: z.coerce.date().refine(isFutureDate, {
-      message: "End date must be in the future",
-    }),
+    name: z.string().min(3, "Name is too short"),
+    description: z.string().min(3, "Description is too short"),
+    start_date: futureDate,
+    end_date: futureDate,
   })
   .refine((data) => data.end_date > data.start_date, {
     message: "End date must be after start date",
