@@ -23,7 +23,7 @@ Deno.serve(async (_req) => {
     const body = await _req.json();
 
     const { error: organizersError } = await supabase
-      .from("tournamentorganizers")
+      .from("tournament_organizers")
       .insert({
         tournament_id: body.tournament_id,
         userprofile_id: body.userprofile_id,
