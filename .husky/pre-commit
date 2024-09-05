@@ -1,3 +1,4 @@
 # .husky/pre-commit
 npm run check-prettier
+npm run make-prettier
 npm run check-types

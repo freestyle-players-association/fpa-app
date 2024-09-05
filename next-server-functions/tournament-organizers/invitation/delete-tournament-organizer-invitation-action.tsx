@@ -19,7 +19,5 @@ export async function deleteTournamentOrganizerInvitation(
 
   revalidatePath(`/tournaments/${tournamentId}`);
 
-  console.log("lol", res);
-
   return {};
 }
