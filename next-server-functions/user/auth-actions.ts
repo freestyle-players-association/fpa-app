@@ -18,7 +18,7 @@ export const signIn = async (formData: FormData) => {
     return redirect("/login?message=Could not authenticate user");
   }
 
-  return redirect("/tournaments");
+  return redirect("/events");
 };
 
 export const signUp = async (formData: FormData) => {
@@ -45,7 +45,7 @@ export const signUp = async (formData: FormData) => {
     .insert({ username, id: data.user.id, email })
     .throwOnError();
 
-  return redirect("/tournaments");
+  return redirect("/events");
 };
 
 export const signOut = async () => {
