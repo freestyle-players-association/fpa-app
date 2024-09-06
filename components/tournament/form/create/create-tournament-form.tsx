@@ -4,8 +4,10 @@ import { useFormState } from "react-dom";
 import { createTournament } from "@/next-server-functions/tournament/create-tournament-action";
 import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
 import styles from "./create-tournament-form.module.css";
+import { useTranslations } from "next-intl";
 
 export default function CreateTournamentForm() {
+  const t = useTranslations("HomePage");
   const [state, dispatch] = useFormState(createTournament, {});
 
   const errors = state.validationErrors;
@@ -22,6 +24,7 @@ export default function CreateTournamentForm() {
 
   return (
     <form action={dispatch} className="flex flex-col gap-2">
+      <p>{t("title")}</p>
       <input
         name="name"
         required
