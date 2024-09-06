@@ -12,7 +12,7 @@ const futureDate = z
     },
   );
 
-export const TournamentSchema = z
+export const EventSchema = z
   .object({
     name: z.string().min(3, "Name is too short"),
     description: z.string().min(3, "Description is too short"),

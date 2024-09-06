@@ -11,7 +11,7 @@ const futureDate = z.string().refine(
 
 export const ScheduleSchema = z
   .object({
-    tournament_id: z.string().uuid(),
+    event_id: z.string().uuid(),
     description: z.string().min(3, "Description is too short"),
     start_time: futureDate,
     end_time: futureDate,

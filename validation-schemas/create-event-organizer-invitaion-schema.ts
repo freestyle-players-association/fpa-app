@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-export const CreateTournamentOrganizerInvitationSchema = z.object({
-  tournamentId: z.string().min(1, "tournament not passed"),
+export const CreateEventOrganizerInvitationSchema = z.object({
+  eventId: z.string().min(1, "event not passed"),
   userId: z.string().min(1, "user not passed"),
 });

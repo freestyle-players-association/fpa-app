@@ -6,7 +6,7 @@ import { cookies } from "next/headers";
 
 const handleI18nRouting = createMiddleware(routing);
 
-const protectedRoutes = ["/user-profile", "/tournaments/create"];
+const protectedRoutes = ["/user-profile", "/events/create"];
 
 export async function middleware(request: NextRequest) {
   const response = handleI18nRouting(request);
