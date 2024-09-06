@@ -94,6 +94,50 @@ export type Database = {
           },
         ]
       }
+      tournament_schedules: {
+        Row: {
+          description: string | null
+          end_time: string
+          full_address: string | null
+          id: string
+          lat: number | null
+          lng: number | null
+          place_id: string | null
+          start_time: string
+          tournament_id: string
+        }
+        Insert: {
+          description?: string | null
+          end_time: string
+          full_address?: string | null
+          id?: string
+          lat?: number | null
+          lng?: number | null
+          place_id?: string | null
+          start_time: string
+          tournament_id: string
+        }
+        Update: {
+          description?: string | null
+          end_time?: string
+          full_address?: string | null
+          id?: string
+          lat?: number | null
+          lng?: number | null
+          place_id?: string | null
+          start_time?: string
+          tournament_id?: string
+        }
+        Relationships: [
+          {
+            foreignKeyName: "tournament_schedules_tournament_id_fkey"
+            columns: ["tournament_id"]
+            isOneToOne: false
+            referencedRelation: "tournaments"
+            referencedColumns: ["id"]
+          },
+        ]
+      }
       tournaments: {
         Row: {
           description: string

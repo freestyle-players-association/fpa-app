@@ -9,6 +9,7 @@
     "make-prettier": "prettier --write ."
   },
   "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.4.0",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
     "autoprefixer": "10.4.17",
