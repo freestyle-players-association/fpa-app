@@ -12,7 +12,7 @@ export default async function TournamentScheduleDetails({
 }: TournamentScheduleDetails) {
   return (
     <>
-      <div style={{ border: "solid", padding: "1rem" }}>
+      <div className="border p-2">
         <h2 className="text-xl font-bold mb-2">{tournament.name} Schedule</h2>
         {schedule.length === 0 ? (
           <p className="text-slate-500">No schedule available</p>
