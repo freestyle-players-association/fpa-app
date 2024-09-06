@@ -26,12 +26,12 @@ export default async function TournamentScheduleDetailsPage({
           tournament={tournament}
           schedule={schedule}
         />
-        {userIsOrganizer && (
-          <Link href={`/tournaments/${tournament.id}/schedule/create`}>
-            Create Schedule
-          </Link>
-        )}
       </Suspense>
+      {userIsOrganizer && (
+        <Link href={`/tournaments/${tournament.id}/schedule/create`}>
+          Create Schedule
+        </Link>
+      )}
     </>
   );
 }

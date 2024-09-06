@@ -3,6 +3,7 @@ import { Client } from "@googlemaps/google-maps-services-js";
 
 const client = new Client({});
 
+// todo refactor as server function, see next-server-functions/google-api/fetch-places-data.ts
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
   const lat = searchParams.get("lat");

@@ -21,11 +21,7 @@ export default async function TournamentDetailsPage({
       <Suspense fallback={<p>loading</p>}>
         <TournamentOrganizersSection tournamentId={tournamentId} />
       </Suspense>
-      <Suspense fallback={<p>loading</p>}>
-        <Link href={`/tournaments/${tournamentId}/schedule/`}>
-          See schedule
-        </Link>
-      </Suspense>
+      <Link href={`/tournaments/${tournamentId}/schedule/`}>See schedule</Link>
     </>
   );
 }
