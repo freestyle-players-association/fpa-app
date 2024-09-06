@@ -1,5 +1,5 @@
 import { createClient } from "@/utils/supabase/server";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { signOut } from "@/next-server-functions/user/auth-actions";
 import { getAuthenticatedUserProfile } from "@/next-server-functions/user-profile/user-profile-data";
 import UserProfileAvatar from "@/components/user-profile/details/user-profile-avatar/user-profile-avatar";

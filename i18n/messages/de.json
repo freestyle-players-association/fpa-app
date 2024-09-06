@@ -1,0 +1,24 @@
+{
+  "HomePage": {
+    "title": "Hallo welt"
+  },
+  "user": {
+    "profile": {
+      "common": {
+        "username": "Nutzername",
+        "email": "E-Mail"
+      },
+      "form": {
+        "update-profile-button": "Profil bearbeiten"
+      }
+    }
+  },
+  "tournament": {
+    "organizer": {
+      "owned": "Events die du organisierst"
+    },
+    "invitation": {
+      "invitation-list-title": "Einladung als Organisierer"
+    }
+  }
+}

@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { SubmitButton } from "./submit-button";
-import { signUp } from "@/next-server-functions/user/auth-actions";
+import { signIn } from "@/next-server-functions/user/auth-actions";
+import { Link } from "@/i18n/routing";
 
 export default function Login({
   searchParams,
@@ -40,15 +40,6 @@ export default function Login({
           placeholder="you@example.com"
           required
         />
-        <label className="text-md" htmlFor="username">
-          Username
-        </label>
-        <input
-          className="rounded-md px-4 py-2 bg-inherit border mb-6"
-          name="username"
-          placeholder="Mr. SuperZzz"
-          required
-        />
         <label className="text-md" htmlFor="password">
           Password
         </label>
@@ -60,12 +51,13 @@ export default function Login({
           required
         />
         <SubmitButton
-          formAction={signUp}
-          className="border border-foreground/20 rounded-md px-4 py-2 text-foreground mb-2"
-          pendingText="Signing Up..."
+          formAction={signIn}
+          className="bg-green-700 rounded-md px-4 py-2 text-foreground mb-2"
+          pendingText="Signing In..."
         >
-          Sign Up
+          Sign In
         </SubmitButton>
+        <Link href={"/sign-up"}>Sign Up</Link>
         {searchParams?.message && (
           <p className="mt-4 p-4 bg-foreground/10 text-foreground text-center">
             {searchParams.message}

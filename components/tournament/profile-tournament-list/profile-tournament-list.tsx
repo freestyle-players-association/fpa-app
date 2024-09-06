@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { listTournamentsOfUser } from "@/next-server-functions/tournament/tournaments-data";
 import { createClient } from "@/utils/supabase/server";
 

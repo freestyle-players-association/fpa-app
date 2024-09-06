@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import TournamentList from "@/components/tournament/list/tournament-list";
 import { Suspense } from "react";
 import TournamentListSkeleton from "@/components/tournament/list/tournament-list-skeleton";
