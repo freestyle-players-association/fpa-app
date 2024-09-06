@@ -13,7 +13,7 @@
       }
     }
   },
-  "tournament": {
+  "event": {
     "organizer": {
       "owned": "Events die du organisierst"
     },

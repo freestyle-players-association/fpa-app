@@ -144,10 +144,10 @@ INSERT INTO "auth"."refresh_tokens" ("instance_id", "id", "token", "user_id", "r
 
 
 --
--- Data for Name: tournaments; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: events; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO public.tournaments (id, name, description, start_date, end_date)
+INSERT INTO public.events (id, name, description, start_date, end_date)
 VALUES
     ('4e805da4-08b7-45ab-8d98-81d089b908f0', 'Amsterjam', 'Amsterdam', '2024-07-25 00:00:00.000000 +00:00','2024-07-28 00:00:00.000000 +00:00'),
     ('dc434470-bbca-47a7-bf6b-6d5a4a238657', 'Sandslash', 'Debki', '2024-08-22 00:00:00.000000 +00:00','2024-08-25 00:00:00.000000 +00:00'),
@@ -164,10 +164,10 @@ INSERT INTO "public"."userprofiles" ("id", "username", "email", "avatar_url") VA
 	('24403d5a-668a-41a2-a9e5-1ed740bc5bfc', 'Uppa', 'uppa@fpa.com', '24403d5a-668a-41a2-a9e5-1ed740bc5bfc.jpeg');
 
 --
--- Data for Name: tournament_organizers; Type: TABLE DATA; Schema: public; Owner: postgres
+-- Data for Name: event_organizers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."tournament_organizers" ("tournament_id", "userprofile_id") VALUES
+INSERT INTO "public"."event_organizers" ("event_id", "userprofile_id") VALUES
 	('4e805da4-08b7-45ab-8d98-81d089b908f0', '006d3f4c-be0e-4361-8cb2-78d1cf032719'),
 	('4e805da4-08b7-45ab-8d98-81d089b908f0', '24403d5a-668a-41a2-a9e5-1ed740bc5bfc'),
 	('8cb16914-4ebc-47b7-8fcd-2d5309ffd310', '006d3f4c-be0e-4361-8cb2-78d1cf032719'),

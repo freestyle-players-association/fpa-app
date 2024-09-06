@@ -12,8 +12,8 @@ const defaultUrl = process.env.VERCEL_URL
 
 export const metadata = {
   metadataBase: new URL(defaultUrl),
-  title: "Tournament Planner",
-  description: "Plan freestyle tournaments with ease",
+  title: "Event Planner",
+  description: "Plan freestyle events with ease",
 };
 
 export default async function RootLayout({
@@ -31,8 +31,8 @@ export default async function RootLayout({
           <main className="min-h-screen flex flex-col items-center">
             <header className="flex w-full justify-between border-2 p-2">
               <div className="flex gap-4">
-                <Link href="/">Tournament Planner</Link>
-                <Link href="/tournaments">Tournaments</Link>
+                <Link href="/">Event Planner</Link>
+                <Link href="/events">Events</Link>
               </div>
               <AuthButton />
             </header>

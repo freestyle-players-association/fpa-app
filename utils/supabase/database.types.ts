@@ -34,25 +34,25 @@ export type Database = {
   }
   public: {
     Tables: {
-      tournament_organizers: {
+      event_organizers: {
         Row: {
-          tournament_id: string
+          event_id: string
           userprofile_id: string
         }
         Insert: {
-          tournament_id: string
+          event_id: string
           userprofile_id: string
         }
         Update: {
-          tournament_id?: string
+          event_id?: string
           userprofile_id?: string
         }
         Relationships: [
           {
             foreignKeyName: "tournamentorganizers_tournament_id_fkey"
-            columns: ["tournament_id"]
+            columns: ["event_id"]
             isOneToOne: false
-            referencedRelation: "tournaments"
+            referencedRelation: "events"
             referencedColumns: ["id"]
           },
           {
@@ -64,25 +64,25 @@ export type Database = {
           },
         ]
       }
-      tournament_organizers_invitations: {
+      event_organizers_invitations: {
         Row: {
-          tournament_id: string
+          event_id: string
           userprofile_id: string
         }
         Insert: {
-          tournament_id: string
+          event_id: string
           userprofile_id: string
         }
         Update: {
-          tournament_id?: string
+          event_id?: string
           userprofile_id?: string
         }
         Relationships: [
           {
             foreignKeyName: "tournament_organizers_invitations_tournament_id_fkey"
-            columns: ["tournament_id"]
+            columns: ["event_id"]
             isOneToOne: false
-            referencedRelation: "tournaments"
+            referencedRelation: "events"
             referencedColumns: ["id"]
           },
           {
@@ -94,51 +94,51 @@ export type Database = {
           },
         ]
       }
-      tournament_schedules: {
+      event_schedules: {
         Row: {
           description: string | null
           end_time: string
+          event_id: string
           full_address: string | null
           id: string
           lat: number | null
           lng: number | null
           place_id: string | null
           start_time: string
-          tournament_id: string
         }
         Insert: {
           description?: string | null
           end_time: string
+          event_id: string
           full_address?: string | null
           id?: string
           lat?: number | null
           lng?: number | null
           place_id?: string | null
           start_time: string
-          tournament_id: string
         }
         Update: {
           description?: string | null
           end_time?: string
+          event_id?: string
           full_address?: string | null
           id?: string
           lat?: number | null
           lng?: number | null
           place_id?: string | null
           start_time?: string
-          tournament_id?: string
         }
         Relationships: [
           {
             foreignKeyName: "tournament_schedules_tournament_id_fkey"
-            columns: ["tournament_id"]
+            columns: ["event_id"]
             isOneToOne: false
-            referencedRelation: "tournaments"
+            referencedRelation: "events"
             referencedColumns: ["id"]
           },
         ]
       }
-      tournaments: {
+      events: {
         Row: {
           description: string
           end_date: string | null
