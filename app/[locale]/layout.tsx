@@ -2,7 +2,7 @@ import React from "react";
 import { GeistSans } from "geist/font/sans";
 import "../globals.css";
 import AuthButton from "@/components/auth/auth-button";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages } from "next-intl/server";
 

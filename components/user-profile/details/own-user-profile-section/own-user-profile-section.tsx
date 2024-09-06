@@ -1,5 +1,5 @@
 import UserProfileAvatar from "@/components/user-profile/details/user-profile-avatar/user-profile-avatar";
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { Tables } from "@/utils/supabase/database.types";
 import { getTranslations } from "next-intl/server";
 

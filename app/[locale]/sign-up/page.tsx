@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { SubmitButton } from "./submit-button";
 import { signUp } from "@/next-server-functions/user/auth-actions";
 

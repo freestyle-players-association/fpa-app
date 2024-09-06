@@ -1,4 +1,4 @@
-import Link from "next/link";
+import { Link } from "@/i18n/routing";
 import { listTournaments } from "@/next-server-functions/tournament/tournaments-data";
 
 export default async function TournamentList() {

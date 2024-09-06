@@ -1,6 +1,6 @@
-import Link from "next/link";
 import { SubmitButton } from "./submit-button";
 import { signIn } from "@/next-server-functions/user/auth-actions";
+import { Link } from "@/i18n/routing";
 
 export default function Login({
   searchParams,
