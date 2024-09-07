@@ -1,16 +1,27 @@
-import { Link } from "@/i18n/routing";
-import { listEvents } from "@/next-server-functions/event/events-data";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
 
-export default async function EventList() {
-  const { data: events } = await listEvents();
+export default function EventList(events) {
+  const formatDate = (date: Date) => {
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
 
   return (
-    <ul style={{ border: "solid 1px", padding: "1rem" }}>
-      {events!.map((t) => (
-        <li key={t.id} className="p-2 border-2 mb-1">
-          <Link href={`/events/${t.id}`}>{t.name}</Link>
-        </li>
-      ))}
-    </ul>
+    <div className="container mx-auto py-10">
+      <Table>
+        <TableBody>
+          {events.map((event, index) => (
+            <TableRow key={index}>
+              <TableCell className="font-medium">{event.name}</TableCell>
+              <TableCell>{formatDate(event.startDate)}</TableCell>
+              <TableCell>{formatDate(event.endDate)}</TableCell>
+            </TableRow>
+          ))}
+        </TableBody>
+      </Table>
+    </div>
   );
 }

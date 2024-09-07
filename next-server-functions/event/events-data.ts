@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import { notFound } from "next/navigation";
 import { SupabaseClient } from "@supabase/supabase-js";
 
-export async function listEvents() {
+export async function listEvents(): Promise<Typ> {
   const supabase = createClient();
   return supabase.from("events").select().throwOnError();
 }

@@ -3,8 +3,9 @@
 import { useFormState } from "react-dom";
 import { createEvent } from "@/next-server-functions/event/create-event-action";
 import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
-import styles from "./create-event-form.module.css";
 import { useTranslations } from "next-intl";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 
 export default function CreateEventForm() {
   const t = useTranslations("HomePage");
@@ -25,31 +26,13 @@ export default function CreateEventForm() {
   return (
     <form action={dispatch} className="flex flex-col gap-2">
       <p>{t("title")}</p>
-      <input
-        name="name"
-        required
-        placeholder="name"
-        className={styles.textInput}
-      />
-      <input
+      <Input name="name" required placeholder="Event name" />
+      <Textarea
         name="description"
-        placeholder="description"
-        className={styles.textInput}
+        placeholder="Say something about your event"
       />
-      <input
-        name="start_date"
-        required
-        type="date"
-        placeholder="start date"
-        className={styles.textInput}
-      />
-      <input
-        name="end_date"
-        required
-        type="date"
-        placeholder="end date"
-        className={styles.textInput}
-      />
+      <Input name="start_date" required type="date" placeholder="start date" />
+      <Input name="end_date" required type="date" placeholder="end date" />
       <FormSubmitButton>Create Event</FormSubmitButton>
       {displayErrors}
     </form>

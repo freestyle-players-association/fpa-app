@@ -4,14 +4,17 @@ import { Suspense } from "react";
 import EventListSkeleton from "@/components/event/list/event-list-skeleton";
 import { getUser } from "@/next-server-functions/user/auth-data";
 import { createClient } from "@/utils/supabase/server";
+import { listEvents } from "@/next-server-functions/event/events-data";
 
 export default async function EventsListPage() {
   const supabase = createClient();
   const user = await getUser(supabase);
+  const { data: events } = await listEvents();
+
   return (
     <div>
       <Suspense fallback={<EventListSkeleton />}>
-        <EventList />
+        <EventList events={events} />
       </Suspense>
       {user && <Link href={"/events/create"}>Create Event {"->"}</Link>}
     </div>
