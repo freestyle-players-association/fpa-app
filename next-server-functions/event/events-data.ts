@@ -36,6 +36,7 @@ export async function listEventsOfUser<SC>(
     .from("event_organizers")
     .select(
       `
+      event_id,
       events (*)
     `,
     )
