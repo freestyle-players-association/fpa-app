@@ -1,6 +1,7 @@
 import { Link } from "@/i18n/routing";
 import { listEventsOfUser } from "@/next-server-functions/event/events-data";
 import { createClient } from "@/utils/supabase/server";
+import EventList from "@/components/event/list/event-list";
 
 type ProfileEventListProps = {
   userId: string;
@@ -13,13 +14,8 @@ export default async function ProfileEventList({
 
   const { data: events } = await listEventsOfUser(supabase, userId);
 
+  if (!events) return null;
   return (
-    <ul>
-      {events!.map((t) => (
-        <li key={t.event_id} className="p-2 border-2 mb-1">
-          <Link href={`/events/${t.event_id}`}>{t.events!.name}</Link>
-        </li>
-      ))}
-    </ul>
+    <EventList events={events} />
   );
 }
