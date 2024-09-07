@@ -12,7 +12,7 @@ export type FetchPlacesDataValidationErrors = {
 type FetchPlacesDataState = {
   validationErrors?: FetchPlacesDataValidationErrors;
   error?: string;
-  response?: TextSearchResponse;
+  data?: TextSearchResponse;
 };
 
 const client = new Client({});
@@ -31,7 +31,7 @@ export async function fetchPlacesData(
   }
 
   try {
-    const response = await client.textSearch({
+    const data = await client.textSearch({
       params: {
         query: query,
         key: process.env.GOOGLE_PLACES_API_KEY as string,
@@ -39,7 +39,7 @@ export async function fetchPlacesData(
     });
 
     return {
-      response,
+      data,
     };
   } catch (error) {
     return {
