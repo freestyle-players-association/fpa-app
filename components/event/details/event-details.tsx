@@ -10,7 +10,7 @@ export default async function EventDetails({ event }: EventDetailsProps) {
   const end_date = new Date(event.end_date ?? "").toLocaleDateString();
 
   return (
-    <Card>
+    <Card className="p-4 mb-4">
       <h2>{event.name}</h2>
       <p>{event.description}</p>
       <p>

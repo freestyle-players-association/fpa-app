@@ -5,8 +5,8 @@ import EventListSkeleton from "@/components/event/list/event-list-skeleton";
 import { getUser } from "@/next-server-functions/user/auth-data";
 import { createClient } from "@/utils/supabase/server";
 import { listEvents } from "@/next-server-functions/event/events-data";
-import {Card} from "@/components/ui/card";
-import {buttonVariants, Button} from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { buttonVariants, Button } from "@/components/ui/button";
 
 export default async function EventsListPage() {
   const supabase = createClient();
@@ -18,13 +18,17 @@ export default async function EventsListPage() {
   }
 
   return (
-    <Card>
+    <Card className="p-4">
       <Suspense fallback={<EventListSkeleton />}>
         <EventList events={events} />
       </Suspense>
-      {user && <Link href={"/events/create"}>
-        <Button className={buttonVariants({variant: "default"})}>Create Event</Button>
-      </Link>}
+      {user && (
+        <Link href={"/events/create"}>
+          <Button className={buttonVariants({ variant: "default" })}>
+            Create Event
+          </Button>
+        </Link>
+      )}
     </Card>
   );
 }

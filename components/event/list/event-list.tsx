@@ -1,12 +1,12 @@
-import {Table, TableBody, TableCell, TableRow} from "@/components/ui/table";
-import {Tables} from "@/utils/supabase/database.types";
-import {Link} from "@/i18n/routing";
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { Tables } from "@/utils/supabase/database.types";
+import { Link } from "@/i18n/routing";
 
 type EventListProps = {
-  events: Tables<'events'>[];
-}
+  events: Tables<"events">[];
+};
 
-export default function EventList({events}: EventListProps) {
+export default function EventList({ events }: EventListProps) {
   const formatDate = (dateString: string) => {
     if (!dateString) return "";
     const date = new Date(dateString);
@@ -22,11 +22,11 @@ export default function EventList({events}: EventListProps) {
       <TableBody>
         {events.map((event, index) => (
           <TableRow key={index}>
-            <Link href={`/events/${event.id}`} key={index}>
-              <TableCell className="font-medium">{event.name}</TableCell>
-              <TableCell>{formatDate(event.start_date ?? "")}</TableCell>
-              <TableCell>{formatDate(event.end_date ?? "")}</TableCell>
-            </Link>
+            <TableCell className="font-medium">
+              <Link href={`/events/${event.id}`}>{event.name}</Link>
+            </TableCell>
+            <TableCell>{formatDate(event.start_date ?? "")}</TableCell>
+            <TableCell>{formatDate(event.end_date ?? "")}</TableCell>
           </TableRow>
         ))}
       </TableBody>

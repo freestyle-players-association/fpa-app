@@ -2,8 +2,8 @@
 
 import { createClient } from "@/utils/supabase/server";
 import { notFound } from "next/navigation";
-import {PostgrestSingleResponse, SupabaseClient} from "@supabase/supabase-js";
-import {Tables} from "@/utils/supabase/database.types";
+import { PostgrestSingleResponse, SupabaseClient } from "@supabase/supabase-js";
+import { Tables } from "@/utils/supabase/database.types";
 
 export async function listEvents() {
   const supabase = createClient();
@@ -36,6 +36,7 @@ export async function listEventsOfUser<SC>(
     .from("event_organizers")
     .select(
       `
+      event_id,
       events (*)
     `,
     )

@@ -4,6 +4,7 @@ import { getEventById } from "@/next-server-functions/event/events-data";
 import { createClient } from "@/utils/supabase/server";
 import EventOrganizersSection from "@/components/event-organizers/section/event-organizers-section";
 import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 export default async function EventDetailsPage({
   params: { eventId },
@@ -21,7 +22,9 @@ export default async function EventDetailsPage({
       <Suspense fallback={<p>loading</p>}>
         <EventOrganizersSection eventId={eventId} />
       </Suspense>
-      <Link href={`/events/${eventId}/schedule/`}>See schedule</Link>
+      <Link href={`/events/${eventId}/schedule/`}>
+        <Button>See schedule</Button>
+      </Link>
     </>
   );
 }

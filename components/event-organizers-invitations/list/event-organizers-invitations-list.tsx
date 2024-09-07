@@ -9,7 +9,7 @@ export default async function EventOrganizersInvitations({
 }) {
   const invitations = await listOrganizersInvitations(eventId);
   return (
-    <div style={{ border: "solid 1px", padding: "1rem" }}>
+    <div>
       <h3>pending organizer invitations:</h3>
       <ul>
         {invitations.data?.map((invitation) => (
