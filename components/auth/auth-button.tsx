@@ -2,6 +2,8 @@ import { createClient } from "@/utils/supabase/server";
 import { Link } from "@/i18n/routing";
 import { signOut } from "@/next-server-functions/user/auth-actions";
 import { getAuthenticatedUserProfile } from "@/next-server-functions/user-profile/user-profile-data";
+
+import { buttonVariants, Button } from "@/components/ui/button";
 import UserProfileAvatar from "@/components/user-profile/details/user-profile-avatar/user-profile-avatar";
 
 export default async function AuthButton() {
@@ -17,16 +19,11 @@ export default async function AuthButton() {
         />
       </Link>
       <form action={signOut}>
-        <button className="py-2 px-4 rounded-md no-underline bg-btn-background hover:bg-btn-background-hover">
-          Logout
-        </button>
+        <Button variant={"secondary"}>Logout</Button>
       </form>
     </div>
   ) : (
-    <Link
-      href="/login"
-      className="py-2 px-3 flex rounded-md no-underline bg-btn-background hover:bg-btn-background-hover"
-    >
+    <Link href="/login" className={buttonVariants({ variant: "secondary" })}>
       Login
     </Link>
   );
