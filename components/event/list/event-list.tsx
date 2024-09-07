@@ -1,7 +1,15 @@
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import {Table, TableBody, TableCell, TableRow} from "@/components/ui/table";
+import {Tables} from "@/utils/supabase/database.types";
+import {Link} from "@/i18n/routing";
 
-export default function EventList(events) {
-  const formatDate = (date: Date) => {
+type EventListProps = {
+  events: Tables<'events'>[];
+}
+
+export default function EventList({events}: EventListProps) {
+  const formatDate = (dateString: string) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
     return date.toLocaleDateString("en-US", {
       year: "numeric",
       month: "short",
@@ -10,18 +18,18 @@ export default function EventList(events) {
   };
 
   return (
-    <div className="container mx-auto py-10">
-      <Table>
-        <TableBody>
-          {events.map((event, index) => (
-            <TableRow key={index}>
+    <Table>
+      <TableBody>
+        {events.map((event, index) => (
+          <TableRow key={index}>
+            <Link href={`/events/${event.id}`} key={index}>
               <TableCell className="font-medium">{event.name}</TableCell>
-              <TableCell>{formatDate(event.startDate)}</TableCell>
-              <TableCell>{formatDate(event.endDate)}</TableCell>
-            </TableRow>
-          ))}
-        </TableBody>
-      </Table>
-    </div>
+              <TableCell>{formatDate(event.start_date ?? "")}</TableCell>
+              <TableCell>{formatDate(event.end_date ?? "")}</TableCell>
+            </Link>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   );
 }
