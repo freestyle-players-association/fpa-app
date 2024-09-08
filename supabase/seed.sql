@@ -158,11 +158,15 @@ VALUES
 -- Data for Name: userprofiles; Type: TABLE DATA; Schema: public; Owner: postgres
 --
 
-INSERT INTO "public"."userprofiles" ("id", "username", "email", "avatar_url") VALUES
-	('d21dfe65-42b3-41f8-9481-8d6916782f2a', 'Aang', 'aang@fpa.com', 'd21dfe65-42b3-41f8-9481-8d6916782f2a.jpg'),
-	('006d3f4c-be0e-4361-8cb2-78d1cf032719', 'Kitara', 'kitara@fpa.com', '006d3f4c-be0e-4361-8cb2-78d1cf032719.png'),
-	('24403d5a-668a-41a2-a9e5-1ed740bc5bfc', 'Uppa', 'uppa@fpa.com', '24403d5a-668a-41a2-a9e5-1ed740bc5bfc.jpeg');
+INSERT INTO "public"."userprofiles" ("id", "username", "email", "avatar_url", "first_name", "last_name", "date_of_birth") VALUES
+    -- User with full information
+    ('d21dfe65-42b3-41f8-9481-8d6916782f2a', 'Aang', 'aang@fpa.com', 'd21dfe65-42b3-41f8-9481-8d6916782f2a.jpg', 'Aang', 'Airbender', '2000-12-21'),
 
+    -- User without first name, last name, and date_of_birth
+    ('006d3f4c-be0e-4361-8cb2-78d1cf032719', 'Kitara', 'kitara@fpa.com', '006d3f4c-be0e-4361-8cb2-78d1cf032719.png', NULL, NULL, NULL),
+
+    -- User with some missing fields
+    ('24403d5a-668a-41a2-a9e5-1ed740bc5bfc', 'Uppa', 'uppa@fpa.com', '24403d5a-668a-41a2-a9e5-1ed740bc5bfc.jpeg', 'Uppa', NULL, NULL);
 --
 -- Data for Name: event_organizers; Type: TABLE DATA; Schema: public; Owner: postgres
 --
