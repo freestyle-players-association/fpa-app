@@ -5,9 +5,9 @@ import EventScheduleDetails from "@/components/event-schedule/details/event-sche
 import { getScheduleByEventId } from "@/next-server-functions/event-schedule/event-schedules-data";
 import { getUser } from "@/next-server-functions/user/auth-data";
 import { isUserEventOrganizer } from "@/next-server-functions/user/event/organizer-check-action";
-import Link from "next/link";
 import { Card } from "@/components/ui/card";
-import { Button } from "@/components/ui/button";
+import { Link } from "@/i18n/routing";
+import { buttonVariants } from "@/components/ui/button";
 
 export default async function EventScheduleDetailsPage({
   params: { eventId },
@@ -27,8 +27,11 @@ export default async function EventScheduleDetailsPage({
         <EventScheduleDetails event={event} schedule={schedule} />
       </Suspense>
       {userIsOrganizer && (
-        <Link href={`/events/${event.id}/schedule/create`}>
-          <Button>Create Schedule</Button>
+        <Link
+          href={`/events/${event.id}/schedule/create`}
+          className={buttonVariants({ variant: "default" })}
+        >
+          Create Schedule
         </Link>
       )}
     </Card>
