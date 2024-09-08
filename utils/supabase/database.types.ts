@@ -49,14 +49,14 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "tournamentorganizers_tournament_id_fkey"
+            foreignKeyName: "event_organizers_tournament_id_fkey"
             columns: ["event_id"]
             isOneToOne: false
             referencedRelation: "events"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "tournamentorganizers_userprofile_id_fkey"
+            foreignKeyName: "event_organizers_userprofile_id_fkey"
             columns: ["userprofile_id"]
             isOneToOne: false
             referencedRelation: "userprofiles"
@@ -79,14 +79,14 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "tournament_organizers_invitations_tournament_id_fkey"
+            foreignKeyName: "event_organizers_invitations_event_id_fkey"
             columns: ["event_id"]
             isOneToOne: false
             referencedRelation: "events"
             referencedColumns: ["id"]
           },
           {
-            foreignKeyName: "tournament_organizers_invitations_userprofile_id_fkey"
+            foreignKeyName: "event_organizers_invitations_userprofile_id_fkey"
             columns: ["userprofile_id"]
             isOneToOne: false
             referencedRelation: "userprofiles"
@@ -130,7 +130,7 @@ export type Database = {
         }
         Relationships: [
           {
-            foreignKeyName: "tournament_schedules_tournament_id_fkey"
+            foreignKeyName: "event_schedules_event_id_fkey"
             columns: ["event_id"]
             isOneToOne: false
             referencedRelation: "events"
@@ -165,20 +165,29 @@ export type Database = {
       userprofiles: {
         Row: {
           avatar_url: string | null
+          date_of_birth: string | null
           email: string
+          first_name: string | null
           id: string
+          last_name: string | null
           username: string
         }
         Insert: {
           avatar_url?: string | null
+          date_of_birth?: string | null
           email: string
+          first_name?: string | null
           id: string
+          last_name?: string | null
           username: string
         }
         Update: {
           avatar_url?: string | null
+          date_of_birth?: string | null
           email?: string
+          first_name?: string | null
           id?: string
+          last_name?: string | null
           username?: string
         }
         Relationships: [
