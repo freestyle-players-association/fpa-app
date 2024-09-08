@@ -1,5 +1,4 @@
 import { Tables } from "@/utils/supabase/database.types";
-import Link from "next/link";
 
 type EventScheduleDetails = {
   event: Tables<"events">;
