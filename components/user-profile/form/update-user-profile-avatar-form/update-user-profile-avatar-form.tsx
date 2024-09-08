@@ -7,7 +7,10 @@ import UserProfileAvatar from "@/components/user-profile/details/user-profile-av
 import { Tables } from "@/utils/supabase/database.types";
 
 type UpdateUserProfileAvatarFormProps = {
-  initialValues: Omit<Tables<"userprofiles">, "id" | "email">;
+  initialValues: Omit<
+    Tables<"userprofiles">,
+    "id" | "email" | "first_name" | "last_name" | "date_of_birth"
+  >;
 };
 
 export default function UpdateUserProfileAvatarForm({
