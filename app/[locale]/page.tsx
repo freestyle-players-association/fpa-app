@@ -1,27 +1,15 @@
 import { getTranslations } from "next-intl/server";
 import { getAuthenticatedUserProfile } from "@/next-server-functions/user-profile/user-profile-data";
 import { createClient } from "@/utils/supabase/server";
-import { Tables } from "@/utils/supabase/database.types";
 
 import CTA from "@/components/common/cta";
 
-function checkIsProfileFinalised(profile: Tables<"userprofiles">) {
-  const requiredFields: Array<keyof Tables<"userprofiles">> = [
-    "first_name",
-    "last_name",
-    "date_of_birth",
-  ];
-  return requiredFields.every(
-    (field) => profile[field] !== null && profile[field] !== "",
-  );
-}
+import { useIsProfileFinalised } from "@/hooks/useIsProfileFinalised";
 
 export default async function Index() {
   const supabase = createClient();
   const userProfile = await getAuthenticatedUserProfile(supabase);
-  const isProfileFinalised = userProfile
-    ? checkIsProfileFinalised(userProfile)
-    : false;
+  const isProfileFinalised = useIsProfileFinalised(userProfile);
 
   const t = await getTranslations("HomePage");
   return (
