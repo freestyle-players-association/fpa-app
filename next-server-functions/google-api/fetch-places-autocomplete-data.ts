@@ -2,7 +2,7 @@
 
 import {
   Client,
-  TextSearchResponse,
+  PlaceAutocompleteResult,
 } from "@googlemaps/google-maps-services-js";
 
 export type FetchPlacesDataValidationErrors = {
@@ -12,35 +12,30 @@ export type FetchPlacesDataValidationErrors = {
 type FetchPlacesDataState = {
   validationErrors?: FetchPlacesDataValidationErrors;
   error?: string;
-  response?: TextSearchResponse;
+  places?: PlaceAutocompleteResult[];
 };
 
 const client = new Client({});
 
-export async function fetchPlacesData(
-  formData: FormData,
+export async function fetchPlacesAutocompleteData(
+  address: string,
 ): Promise<FetchPlacesDataState> {
-  const query = formData.get("query") as string;
-
-  if (!query) {
+  if (!address) {
     return {
       validationErrors: {
-        query: ["Query missing!"],
+        query: ["Address missing!"],
       },
     };
   }
 
   try {
-    const response = await client.textSearch({
+    const data = await client.placeAutocomplete({
       params: {
-        query: query,
-        key: process.env.GOOGLE_PLACES_API_KEY as string,
+        input: address,
+        key: process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY as string,
       },
     });
-
-    return {
-      response,
-    };
+    return { places: data.data.predictions };
   } catch (error) {
     return {
       error: "Something went wrong",
