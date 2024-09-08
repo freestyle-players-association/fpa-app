@@ -3,6 +3,8 @@ import UpdateUserProfileForm from "@/components/user-profile/form/update-profile
 import { getAuthenticatedUserProfile } from "@/next-server-functions/user-profile/user-profile-data";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
+import { Card } from "@/components/ui/card";
+import { Separator } from "@/components/ui/separator";
 
 export default async function UpdateUserProfilePage() {
   const supabase = createClient();
@@ -13,22 +15,19 @@ export default async function UpdateUserProfilePage() {
   }
 
   return (
-    <div>
-      <div style={{ padding: "1rem", border: "solid" }}>
-        <h3 style={{ marginBottom: "0.5rem" }}>Avatar</h3>
-        <UpdateUserProfileAvatarForm
-          initialValues={{
-            username: userProfile.username,
-            avatar_url: userProfile.avatar_url,
-          }}
-        />
-      </div>
-      <div style={{ padding: "1rem", border: "solid" }}>
-        <h3 style={{ marginBottom: "0.5rem" }}>Profile</h3>
-        <UpdateUserProfileForm
-          initialValues={{ username: userProfile.username }}
-        />
-      </div>
-    </div>
+    <Card className="p-4">
+      <h3>Avatar</h3>
+      <UpdateUserProfileAvatarForm
+        initialValues={{
+          username: userProfile.username,
+          avatar_url: userProfile.avatar_url,
+        }}
+      />
+      <Separator className="my-4" />
+      <h3>Profile</h3>
+      <UpdateUserProfileForm
+        initialValues={{ username: userProfile.username }}
+      />
+    </Card>
   );
 }

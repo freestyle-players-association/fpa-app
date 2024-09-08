@@ -4,6 +4,8 @@ import { useFormState } from "react-dom";
 import { updateUserProfile } from "@/next-server-functions/user-profile/update-user-profile-action";
 import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
 import { Tables } from "@/utils/supabase/database.types";
+import { Label } from "@/components/ui/label";
+import { Input } from "@/components/ui/input";
 
 type UpdateUserProfileFormProps = {
   initialValues: Partial<Omit<Tables<"userprofiles">, "avatar_url" | "id">>;
@@ -19,17 +21,15 @@ export default function UpdateUserProfileForm({
       action={dispatch}
       style={{ display: "flex", flexDirection: "column", gap: "1rem" }}
     >
-      <label>
-        Name:{" "}
-        <input
+      <Label>
+        <Input
           name="username"
           type="text"
           required
           placeholder="Username"
           defaultValue={initialValues.username}
-          style={{ color: "black" }}
         />
-      </label>
+      </Label>
 
       <FormSubmitButton>Update user Profile</FormSubmitButton>
     </form>

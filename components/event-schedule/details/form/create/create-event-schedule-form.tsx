@@ -3,6 +3,7 @@
 import { useFormState } from "react-dom";
 import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
 import { createSchedule } from "@/next-server-functions/event-schedule/create-event-schedule-action";
+import { Input } from "@/components/ui/input";
 
 export default function CreateScheduleForm({ eventId }: { eventId: string }) {
   const [state, dispatch] = useFormState(createSchedule, {});
@@ -21,14 +22,14 @@ export default function CreateScheduleForm({ eventId }: { eventId: string }) {
 
   return (
     <form action={dispatch} className="flex flex-col gap-2">
-      <input name="event_id" required value={eventId} type="hidden" />
-      <input name="place_id" value="" type="hidden" />
-      <input name="lat" value="0" type="hidden" />
-      <input name="lng" value="0" type="hidden" />
-      <input name="full_address" value="" type="hidden" />
-      <input name="description" placeholder="description" />
-      <input name="start_time" required type="datetime-local" />
-      <input name="end_time" required type="datetime-local" />
+      <Input name="event_id" required value={eventId} type="hidden" />
+      <Input name="place_id" value="" type="hidden" />
+      <Input name="lat" value="0" type="hidden" />
+      <Input name="lng" value="0" type="hidden" />
+      <Input name="full_address" value="" type="hidden" />
+      <Input name="description" placeholder="description" />
+      <Input name="start_time" required type="datetime-local" />
+      <Input name="end_time" required type="datetime-local" />
       <FormSubmitButton>Create Schedule entry</FormSubmitButton>
       {displayErrors}
     </form>

@@ -4,6 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import { getUser } from "@/next-server-functions/user/auth-data";
 import { Suspense } from "react";
 import EventOrganizersInvitations from "@/components/event-organizers-invitations/list/event-organizers-invitations-list";
+import { Card } from "@/components/ui/card";
 
 type EventOrganizersSectionProps = {
   eventId: string;
@@ -28,13 +29,13 @@ export default async function EventOrganizersSection({
   }
 
   return (
-    <div>
+    <Card className="p-4 flex flex-col gap-4">
       <h3>Organizers-Section</h3>
       <EventOrganizersList organizers={organizers.data!} />
       <Suspense fallback={<p>..loading</p>}>
         <EventOrganizersInvitations eventId={eventId} />
       </Suspense>
       {/*<CreateEventOrganizerInvitationForm eventId={eventId} />*/}
-    </div>
+    </Card>
   );
 }

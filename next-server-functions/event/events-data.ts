@@ -2,7 +2,8 @@
 
 import { createClient } from "@/utils/supabase/server";
 import { notFound } from "next/navigation";
-import { SupabaseClient } from "@supabase/supabase-js";
+import { PostgrestSingleResponse, SupabaseClient } from "@supabase/supabase-js";
+import { Tables } from "@/utils/supabase/database.types";
 
 export async function listEvents() {
   const supabase = createClient();

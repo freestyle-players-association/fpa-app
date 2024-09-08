@@ -8,7 +8,7 @@ export default async function EventOrganizersList({
   organizers: EventOrganizersListItem[];
 }) {
   return (
-    <div style={{ border: "solid", padding: "1rem" }}>
+    <div>
       <h3>Organizers:</h3>
       <ul>
         {organizers.map((organizer) => (

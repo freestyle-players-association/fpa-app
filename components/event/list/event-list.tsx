@@ -1,16 +1,35 @@
+import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import { Tables } from "@/utils/supabase/database.types";
 import { Link } from "@/i18n/routing";
-import { listEvents } from "@/next-server-functions/event/events-data";
 
-export default async function EventList() {
-  const { data: events } = await listEvents();
+type EventListProps = {
+  events: Tables<"events">[];
+};
+
+export default function EventList({ events }: EventListProps) {
+  const formatDate = (dateString: string) => {
+    if (!dateString) return "";
+    const date = new Date(dateString);
+    return date.toLocaleDateString("en-US", {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+    });
+  };
 
   return (
-    <ul style={{ border: "solid 1px", padding: "1rem" }}>
-      {events!.map((t) => (
-        <li key={t.id} className="p-2 border-2 mb-1">
-          <Link href={`/events/${t.id}`}>{t.name}</Link>
-        </li>
-      ))}
-    </ul>
+    <Table>
+      <TableBody>
+        {events.map((event, index) => (
+          <TableRow key={index}>
+            <TableCell className="font-medium">
+              <Link href={`/events/${event.id}`}>{event.name}</Link>
+            </TableCell>
+            <TableCell>{formatDate(event.start_date ?? "")}</TableCell>
+            <TableCell>{formatDate(event.end_date ?? "")}</TableCell>
+          </TableRow>
+        ))}
+      </TableBody>
+    </Table>
   );
 }
