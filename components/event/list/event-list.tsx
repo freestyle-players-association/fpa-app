@@ -1,4 +1,9 @@
-import { Table, TableBody, TableCell, TableRow } from "@/components/ui/table";
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableRow,
+} from "@/components/common/table";
 import { Tables } from "@/utils/supabase/database.types";
 import { Link } from "@/i18n/routing";
 

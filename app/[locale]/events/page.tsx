@@ -5,8 +5,8 @@ import EventListSkeleton from "@/components/event/list/event-list-skeleton";
 import { getUser } from "@/next-server-functions/user/auth-data";
 import { createClient } from "@/utils/supabase/server";
 import { listEvents } from "@/next-server-functions/event/events-data";
-import { Card } from "@/components/ui/card";
-import { buttonVariants } from "@/components/ui/button";
+import { Card } from "@/components/common/card";
+import { buttonVariants } from "@/components/common/button";
 
 export default async function EventsListPage() {
   const supabase = createClient();

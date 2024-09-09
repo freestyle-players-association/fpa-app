@@ -4,7 +4,7 @@ import { createClient } from "@/utils/supabase/server";
 import { getUser } from "@/next-server-functions/user/auth-data";
 import { Suspense } from "react";
 import EventOrganizersInvitations from "@/components/event-organizers-invitations/list/event-organizers-invitations-list";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/common/card";
 
 type EventOrganizersSectionProps = {
   eventId: string;

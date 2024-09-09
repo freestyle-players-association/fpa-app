@@ -1,7 +1,7 @@
 "use client";
 import { PropsWithChildren } from "react";
 import { useFormStatus } from "react-dom";
-import { buttonVariants, Button } from "@/components/ui/button";
+import { buttonVariants, Button } from "@/components/common/button";
 
 export default function FormSubmitButton({ children }: PropsWithChildren) {
   const { pending } = useFormStatus();

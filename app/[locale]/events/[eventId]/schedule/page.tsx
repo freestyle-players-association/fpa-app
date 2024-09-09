@@ -5,9 +5,9 @@ import EventScheduleDetails from "@/components/event-schedule/details/event-sche
 import { getScheduleByEventId } from "@/next-server-functions/event-schedule/event-schedules-data";
 import { getUser } from "@/next-server-functions/user/auth-data";
 import { isUserEventOrganizer } from "@/next-server-functions/user/event/organizer-check-action";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/common/card";
 import { Link } from "@/i18n/routing";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/common/button";
 
 export default async function EventScheduleDetailsPage({
   params: { eventId },

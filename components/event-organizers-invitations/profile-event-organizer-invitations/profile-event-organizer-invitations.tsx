@@ -3,7 +3,7 @@ import { createClient } from "@/utils/supabase/server";
 import DeleteEventOrganizerInvitationButton from "@/components/event-organizers-invitations/form/delete-event-organizer-invitation-button/delete-event-organizer-invitation-button";
 import AcceptEventOrganizerInvitationButton from "@/components/event-organizers-invitations/form/accept-event-organizer-invitation/accept-event-organizer-invitation-button";
 import { getTranslations } from "next-intl/server";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/common/card";
 
 export default async function ProfileEventOrganizerInvitations() {
   const t = await getTranslations("event.invitation");

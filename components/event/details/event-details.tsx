@@ -1,5 +1,5 @@
 import { Tables } from "@/utils/supabase/database.types";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/common/card";
 
 type EventDetailsProps = {
   event: Tables<"events">;

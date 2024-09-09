@@ -3,8 +3,8 @@ import UpdateUserProfileForm from "@/components/user-profile/form/update-profile
 import { getAuthenticatedUserProfile } from "@/next-server-functions/user-profile/user-profile-data";
 import { createClient } from "@/utils/supabase/server";
 import { redirect } from "next/navigation";
-import { Card } from "@/components/ui/card";
-import { Separator } from "@/components/ui/separator";
+import { Card } from "@/components/common/card";
+import { Separator } from "@/components/common/separator";
 
 export default async function UpdateUserProfilePage() {
   const supabase = createClient();

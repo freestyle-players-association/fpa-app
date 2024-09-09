@@ -1,8 +1,8 @@
 import { SubmitButton } from "./submit-button";
 import { signIn } from "@/next-server-functions/user/auth-actions";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { buttonVariants } from "@/components/ui/button";
+import { Input } from "@/components/common/input";
+import { Label } from "@/components/common/label";
+import { buttonVariants } from "@/components/common/button";
 import { Link } from "@/i18n/routing";
 
 export default function Login({

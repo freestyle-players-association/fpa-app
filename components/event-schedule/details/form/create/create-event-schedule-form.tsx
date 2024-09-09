@@ -3,7 +3,7 @@
 import { useFormState } from "react-dom";
 import FormSubmitButton from "@/components/common/form-submit-button";
 import { createSchedule } from "@/next-server-functions/event-schedule/create-event-schedule-action";
-import { Input } from "@/components/ui/input";
+import { Input } from "@/components/common/input";
 
 export default function CreateScheduleForm({ eventId }: { eventId: string }) {
   const [state, dispatch] = useFormState(createSchedule, {});

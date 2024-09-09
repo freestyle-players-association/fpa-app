@@ -3,7 +3,7 @@ import { Suspense } from "react";
 import { getEventById } from "@/next-server-functions/event/events-data";
 import { createClient } from "@/utils/supabase/server";
 import EventOrganizersSection from "@/components/event-organizers/section/event-organizers-section";
-import { buttonVariants } from "@/components/ui/button";
+import { buttonVariants } from "@/components/common/button";
 import { Link } from "@/i18n/routing";
 
 export default async function EventDetailsPage({

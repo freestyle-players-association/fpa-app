@@ -4,8 +4,8 @@ import { useFormState } from "react-dom";
 import { createEvent } from "@/next-server-functions/event/create-event-action";
 import FormSubmitButton from "@/components/common/form-submit-button";
 import { useTranslations } from "next-intl";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
+import { Input } from "@/components/common/input";
+import { Textarea } from "@/components/common/textarea";
 
 export default function CreateEventForm() {
   const t = useTranslations("HomePage");

@@ -2,7 +2,7 @@ import { Suspense } from "react";
 import ProfileEventList from "@/components/event/profile-event-list/profile-event-list";
 import { getTranslations } from "next-intl/server";
 import ProfileEventListSkeleton from "@/components/event/profile-event-list/profile-event-list-skeleton";
-import { Card } from "@/components/ui/card";
+import { Card } from "@/components/common/card";
 
 type ProfileEventListProps = {
   userId: string;

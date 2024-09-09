@@ -1,7 +1,7 @@
 import { SubmitButton } from "./submit-button";
 import { signUp } from "@/next-server-functions/user/auth-actions";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
+import { Label } from "@/components/common/label";
+import { Input } from "@/components/common/input";
 
 export default function Login({
   searchParams,
