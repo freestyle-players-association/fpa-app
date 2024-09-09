@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormState } from "react-dom";
-import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
+import FormSubmitButton from "@/components/common/form-submit-button";
 import { acceptEventOrganizersInvitation } from "@/next-server-functions/event-organizers/invitation/accept-event-organizers-invitation-action";
 
 type AcceptEventOrganizerInvitationProps = {

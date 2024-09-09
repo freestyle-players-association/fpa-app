@@ -6,7 +6,7 @@ import UserProfileAutocomplete from "@/components/user-profile/auto-complete/use
 import { useState } from "react";
 import { Tables } from "@/utils/supabase/database.types";
 import UserProfileDisplay from "@/components/user-profile/details/user-profile-display/user-profile-display";
-import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
+import FormSubmitButton from "@/components/common/form-submit-button";
 
 type CreateEventOrganizerInvitationFormProps = {
   eventId: string;

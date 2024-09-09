@@ -2,7 +2,7 @@
 
 import { useFormState } from "react-dom";
 import { updateUserProfileAvatar } from "@/next-server-functions/user-profile/update-user-profile-avatar-action";
-import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
+import FormSubmitButton from "@/components/common/form-submit-button";
 import UserProfileAvatar from "@/components/user-profile/details/user-profile-avatar/user-profile-avatar";
 import { Tables } from "@/utils/supabase/database.types";
 

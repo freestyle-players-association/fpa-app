@@ -1,7 +1,7 @@
 "use client";
 
 import { useFormState } from "react-dom";
-import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
+import FormSubmitButton from "@/components/common/form-submit-button";
 import { createSchedule } from "@/next-server-functions/event-schedule/create-event-schedule-action";
 import { Input } from "@/components/ui/input";
 

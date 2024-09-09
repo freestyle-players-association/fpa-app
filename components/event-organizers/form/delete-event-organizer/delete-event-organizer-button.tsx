@@ -3,7 +3,7 @@
 import { useFormState } from "react-dom";
 import { deleteEventOrganizerAction } from "@/next-server-functions/event-organizers/delete-event-organizer-action";
 import { PropsWithChildren } from "react";
-import FormSubmitButton from "@/components/common/form-submit-button/form-submit-button";
+import FormSubmitButton from "@/components/common/form-submit-button";
 
 type DeleteEventOrganizerInvitationButtonProps = PropsWithChildren<{
   eventId: string;
