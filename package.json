@@ -34,7 +34,8 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.3.3",
     "use-debounce": "^10.0.1",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "eslint-plugin-custom-rules": "file:./utils/eslint/eslint-plugin-custom-rules"
   },
   "devDependencies": {
     "@types/node": "20.11.5",
