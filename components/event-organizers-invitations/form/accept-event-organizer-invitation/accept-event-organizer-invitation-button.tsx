@@ -8,7 +8,7 @@ type AcceptEventOrganizerInvitationProps = {
   eventId: string;
 };
 
-export default async function AcceptEventOrganizerInvitationButton({
+export default function AcceptEventOrganizerInvitationButton({
   eventId,
 }: AcceptEventOrganizerInvitationProps) {
   const [state, dispatch] = useFormState(acceptEventOrganizersInvitation, {});

@@ -39,7 +39,7 @@ export default function UserProfileAutocomplete(
 
   useEffect(() => {
     handleSearchUser();
-  }, [username]);
+  }, [handleSearchUser, username]);
 
   return (
     <div>
