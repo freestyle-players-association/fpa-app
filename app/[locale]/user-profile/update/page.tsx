@@ -26,7 +26,11 @@ export default async function UpdateUserProfilePage() {
       <Separator className="my-4" />
       <h3>Profile</h3>
       <UpdateUserProfileForm
-        initialValues={{ username: userProfile.username }}
+        initialValues={{
+          username: userProfile.username,
+          last_name: userProfile.last_name,
+          date_of_birth: userProfile.date_of_birth,
+        }}
       />
     </Card>
   );
