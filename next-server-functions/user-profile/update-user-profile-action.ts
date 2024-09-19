@@ -8,6 +8,8 @@ import { revalidatePath } from "next/cache";
 
 type UpdateUserProfileValidationErrors = {
   username?: string[];
+  last_name?: string[];
+  date_of_birth?: string[];
 };
 
 type UpdateUserProfileState = {
@@ -22,6 +24,8 @@ export async function updateUserProfile(
     avatar: true,
   }).safeParse({
     username: formData.get("username"),
+    last_name: formData.get("last_name"),
+    date_of_birth: formData.get("date_of_birth"),
   });
 
   if (!validatedFields.success) {
@@ -39,7 +43,11 @@ export async function updateUserProfile(
 
   await supabase
     .from("userprofiles")
-    .update({ username: validatedFields.data.username })
+    .update({
+      username: validatedFields.data.username,
+      last_name: validatedFields.data.last_name,
+      date_of_birth: validatedFields.data.date_of_birth,
+    })
     .eq("id", user.id);
 
   revalidatePath("/user-profile");

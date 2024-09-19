@@ -64,13 +64,14 @@ Password: `123456`.
 # updates the supabase/seed.sql file with the data of the current local database
 ```
 
+## Remote Development
 
 ### Release-flow
 
 1. Create a new branch from `main`.
 2. Make changes.
 3. Create pull request.
-4. All new migrations are applied to the preview backend environment.
+4. (Optional ) To deploy migrations to the preview backend, execute the `deploy-preview` workflow from the github actions ui
 5. Make all checks pass.
 6. Let the pull request be approved by a collaborator
 7. Merge pull request
