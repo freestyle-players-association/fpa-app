@@ -35,3 +35,29 @@ export async function searchUserProfiles(username: string) {
     .limit(5)
     .throwOnError();
 }
+
+export async function getUserProfileInfoFinalised<SC>(
+  supabase: SupabaseClient<SC>,
+): Promise<boolean> {
+  const user = await getUser(supabase);
+  if (!user) {
+    return false;
+  }
+
+  // Ensure the query returns a correctly typed profile
+  const { data: profile, error } = await supabase
+    .from("userprofiles")
+    .select("*")
+    .eq("id", user.id)
+    .maybeSingle();
+
+  if (error || !profile) {
+    return false;
+  }
+
+  const hasNullsOrEmptyStrings = Object.values(profile).some(
+    (value) => value === null || value === "",
+  );
+
+  return hasNullsOrEmptyStrings ? false : true;
+}
