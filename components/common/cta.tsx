@@ -10,7 +10,8 @@ export default function CTA({ children }: PropsWithChildren) {
   return (
     <Card className="container p-4 flex justify-between items-center text-base">
       <Label>
-        Finalise your profile to be able to attend to events and create those.
+        Complete your profile information to be able to create and attend to
+        events.
       </Label>
       <Link
         className={buttonVariants({ variant: "default" })}

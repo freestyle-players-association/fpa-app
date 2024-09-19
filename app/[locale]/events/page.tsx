@@ -31,7 +31,7 @@ export default async function EventsListPage() {
         <Suspense fallback={<EventListSkeleton />}>
           <EventList events={events} />
         </Suspense>
-        {user && (
+        {user && isUserProfileFinalied && (
           <Link href={"/events/create"}>
             <Button className={buttonVariants({ variant: "default" })}>
               Create Event
