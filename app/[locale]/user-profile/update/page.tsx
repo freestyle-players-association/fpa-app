@@ -27,9 +27,9 @@ export default async function UpdateUserProfilePage() {
       <h3>Profile</h3>
       <UpdateUserProfileForm
         initialValues={{
-          username: userProfile.username,
-          last_name: userProfile.last_name,
-          date_of_birth: userProfile.date_of_birth,
+          username: userProfile!.username,
+          last_name: userProfile!.last_name,
+          date_of_birth: userProfile!.date_of_birth,
         }}
       />
     </Card>
