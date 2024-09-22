@@ -2,9 +2,9 @@ import UpdateUserProfileAvatarForm from "@/components/user-profile/form/update-u
 import UpdateUserProfileForm from "@/components/user-profile/form/update-profile-form/udate-profile-form";
 import { getAuthenticatedUserProfile } from "@/next-server-functions/user-profile/user-profile-data";
 import { createClient } from "@/utils/supabase/server";
-import { redirect } from "next/navigation";
 import { Card } from "@/components/common/card";
 import { Separator } from "@/components/common/separator";
+import { redirect } from "@/i18n/routing";
 
 export default async function UpdateUserProfilePage() {
   const supabase = createClient();
@@ -19,17 +19,17 @@ export default async function UpdateUserProfilePage() {
       <h3>Avatar</h3>
       <UpdateUserProfileAvatarForm
         initialValues={{
-          username: userProfile.username,
-          avatar_url: userProfile.avatar_url,
+          username: userProfile!.username,
+          avatar_url: userProfile!.avatar_url,
         }}
       />
       <Separator className="my-4" />
       <h3>Profile</h3>
       <UpdateUserProfileForm
         initialValues={{
-          username: userProfile.username,
-          last_name: userProfile.last_name,
-          date_of_birth: userProfile.date_of_birth,
+          username: userProfile!.username,
+          last_name: userProfile!.last_name,
+          date_of_birth: userProfile!.date_of_birth,
         }}
       />
     </Card>

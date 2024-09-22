@@ -13,7 +13,10 @@ export default async function EventOrganizersInvitations({
       <h3>pending organizer invitations:</h3>
       <ul>
         {invitations.data?.map((invitation) => (
-          <li style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+          <li
+            key={invitation.event_id}
+            style={{ display: "flex", gap: "1rem", alignItems: "center" }}
+          >
             <UserProfileAvatar
               url={invitation.userprofiles!.avatar_url}
               name={invitation.userprofiles!.username}

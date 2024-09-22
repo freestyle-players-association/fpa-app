@@ -1,10 +1,10 @@
 "use client";
 
-import Link from "next/link";
 import { PropsWithChildren } from "react";
 import { Card } from "./card";
 import { Label } from "./label";
 import { buttonVariants } from "./button";
+import { Link } from "@/i18n/routing";
 
 export default function CTA({ children }: PropsWithChildren) {
   return (

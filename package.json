@@ -6,15 +6,16 @@
     "start": "next start",
     "check-types": "tsc --noEmit",
     "check-prettier": "prettier --check .",
-    "make-prettier": "prettier --write ."
+    "make-prettier": "prettier --write .",
+    "lint": "next lint"
   },
   "dependencies": {
     "@googlemaps/google-maps-services-js": "^3.4.0",
+    "@next/third-parties": "^14.2.8",
     "@radix-ui/react-icons": "^1.3.0",
     "@radix-ui/react-label": "^2.1.0",
     "@radix-ui/react-separator": "^1.1.0",
     "@radix-ui/react-slot": "^1.1.0",
-    "@next/third-parties": "^14.2.8",
     "@react-google-maps/api": "^2.19.3",
     "@supabase/ssr": "latest",
     "@supabase/supabase-js": "latest",
@@ -33,7 +34,8 @@
     "tailwindcss-animate": "^1.0.7",
     "typescript": "5.3.3",
     "use-debounce": "^10.0.1",
-    "zod": "^3.23.8"
+    "zod": "^3.23.8",
+    "eslint-plugin-custom-rules": "file:./utils/eslint/eslint-plugin-custom-rules"
   },
   "devDependencies": {
     "@types/node": "20.11.5",
@@ -41,6 +43,8 @@
     "@types/react-dom": "18.2.18",
     "dotenv": "^16.4.5",
     "encoding": "^0.1.13",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.8",
     "husky": "^9.1.5",
     "prettier": "^3.3.2"
   }

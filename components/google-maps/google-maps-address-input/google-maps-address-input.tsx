@@ -41,7 +41,7 @@ export default function GoogleMapsAddressInput() {
       }, 600);
       debouncedFetch();
     }
-  }, [address]);
+  }, [address, selectedLocation]);
 
   const handleSelectAutoCompleteResult = async (placeId: string) => {
     const res = await fetchGeoCodeData(placeId);
