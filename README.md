@@ -1,5 +1,12 @@
 # Local Development
 
+
+# Pre-requisites
+
+1. Install Docker Desktop
+2. Configure General Settings in Docker Desktop according to this [link](https://supabase.com/docs/guides/cli/getting-started?queryGroups=platform&platform=windows)
+2. Install Node.js
+
 ## Install Packages
 
 Install packages with:
@@ -16,7 +23,7 @@ You need to have docker daemon running
     npx supabase start
     ```
 2. Create a new file called `.env.local`, put in the fields of the file `.example.env.local` and fill the content with
-   the output from the command before
+   the output from the command before (copy API_URL to NEXT_PUBLIC_SUPABASE_URL)
 3. Seed the storage buckets
     ```bash
     node supabase/storage-seed.js
